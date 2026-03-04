@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard - Tortoise DBMS</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>🐢 DBMS</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">Overview</a></li>
+                <li><a href="#">Manage Staff</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+            <div class="logout-section">
+                <a href="../index.html" class="logout-btn">Log Out</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Dashboard Overview</h1>
+                <div class="user-info">
+                    <span>Welcome, <strong>Supervisor Galib</strong></span>
+                    <div class="user-avatar">SG</div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card stat-card">
+                    <h3>Total Tortoises</h3>
+                    <p class="number">142</p>
+                    <span class="trend up">↑ 3 this week</span>
+                </div>
+                <div class="card stat-card alert">
+                    <h3>Medical Alerts</h3>
+                    <p class="number">4</p>
+                    <span class="trend down">Urgent Attention</span>
+                </div>
+                <div class="card stat-card">
+                    <h3>Incubating Eggs</h3>
+                    <p class="number">28</p>
+                    <span class="trend neutral">Hatching in 5 days</span>
+                </div>
+                <div class="card stat-card warning">
+                    <h3>Low Food Stock</h3>
+                    <p class="number">2 Items</p>
+                    <span class="trend down">Restock Needed</span>
+                </div>
+            </section>
+
+            <section class="dashboard-split">
+                <div class="card chart-container">
+                    <h3>Health Overview</h3>
+                    <canvas id="healthChart"></canvas> </div>
+                
+                <div class="card task-container">
+                    <h3>Staff Tasks Today</h3>
+                    <ul class="task-list">
+                        <li class="task-item pending">
+                            <span>Clean Enclosure A (Tanjil)</span>
+                            <span class="status">Pending</span>
+                        </li>
+                        <li class="task-item completed">
+                            <span>Morning Feeding (Shawon)</span>
+                            <span class="status">Done</span>
+                        </li>
+                        <li class="task-item pending">
+                            <span>Vet Check: Tortoise #104 (Rifat)</span>
+                            <span class="status">In Progress</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary small">Assign New Task</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

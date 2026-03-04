@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tortoise Conservation System - Authentication</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="brand-header">
+                <h2>Tortoise Conservation DBMS</h2>
+                <p>Secure Staff Portal</p>
+            </div>
+
+            <form id="loginForm" class="auth-form active">
+                <h3>Sign In</h3>
+                <div class="input-group">
+                    <label for="loginEmail">Email / Username</label>
+                    <input type="text" id="loginEmail" required placeholder="Enter your credentials">
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn-primary">Log In</button>
+                <div class="form-links">
+                    <a href="#" id="linkSignup">Create an Account</a>
+                    <a href="#" id="linkForgot">Forgot Password?</a>
+                </div>
+            </form>
+
+            <form id="signupForm" class="auth-form hidden">
+                <h3>Create Account</h3>
+                <div class="input-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required placeholder="John Doe">
+                </div>
+                <div class="input-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required placeholder="staff@conservation.org">
+                </div>
+                <div class="input-group">
+                    <label for="signupRole">Requested Role</label>
+                    <select id="signupRole" required>
+                        <option value="" disabled selected>Select a role...</option>
+                        <option value="committee">Collecting Committee</option>
+                        <option value="caretaker">Caretaker</option>
+                        <option value="breeding">Breeding Officer</option>
+                        <option value="staff">General Staff</option>
+                        <option value="vet">Veterinarian</option>
+                        <option value="supervisor">Supervisor</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+                <div class="form-links">
+                    <a href="#" id="linkLoginFromSignup">Back to Login</a>
+                </div>
+            </form>
+
+            <form id="forgotForm" class="auth-form hidden">
+                <h3>Reset Password</h3>
+                <p class="helper-text">Enter your email to receive reset instructions.</p>
+                <div class="input-group">
+                    <label for="resetEmail">Email</label>
+                    <input type="email" id="resetEmail" required placeholder="Enter your email">
+                </div>
+                <button type="submit" class="btn-primary">Send Reset Link</button>
+                <div class="form-links">
+                    <a href="#" id="linkLoginFromForgot">Back to Login</a>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+</body>
+</html>

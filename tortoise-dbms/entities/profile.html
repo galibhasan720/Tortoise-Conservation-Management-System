@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tortoise Profile - DBMS</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <nav class="top-nav">
+            <button onclick="window.history.back()" class="btn-back">← Back to Dashboard</button>
+            <h2>Tortoise Profile Details</h2>
+            <div class="user-info">Logged in as: <span id="currentUser">Staff Member</span></div>
+        </nav>
+
+        <main class="profile-content">
+            
+            <header class="profile-header">
+                <div class="profile-image">
+                    <img src="https://placehold.co/150x150/2e7d32/white?text=Tortoise" alt="Tortoise Photo">
+                </div>
+                <div class="profile-identity">
+                    <h1 id="tName">Loading Name...</h1>
+                    <p class="subtitle">ID: <span id="tID">#---</span> | Species: <span id="tSpecies">---</span></p>
+                    <div class="status-badge" id="tStatus">Healthy</div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn-secondary">Edit Profile</button>
+                    <button class="btn-danger">Report Medical Issue</button>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card">
+                    <h4>Age</h4>
+                    <p id="tAge">-- Years</p>
+                </div>
+                <div class="card">
+                    <h4>Weight</h4>
+                    <p id="tWeight">-- kg</p>
+                </div>
+                <div class="card">
+                    <h4>Enclosure</h4>
+                    <p id="tEnclosure">--</p>
+                </div>
+                <div class="card">
+                    <h4>Next Checkup</h4>
+                    <p id="tNextCheckup">--</p>
+                </div>
+            </section>
+
+            <section class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="openTab('medical')">Medical History</button>
+                    <button class="tab-btn" onclick="openTab('growth')">Growth Chart</button>
+                    <button class="tab-btn" onclick="openTab('diet')">Diet Plan</button>
+                </div>
+
+                <div id="medical" class="tab-content active">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Vet</th>
+                            </tr>
+                        </thead>
+                        <tbody id="medicalTableBody">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div id="growth" class="tab-content hidden">
+                    <div class="chart-wrapper">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="diet" class="tab-content hidden">
+                    <div class="diet-card">
+                        <h3>Daily Requirements</h3>
+                        <ul id="dietList">
+                            <li>Loading diet data...</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

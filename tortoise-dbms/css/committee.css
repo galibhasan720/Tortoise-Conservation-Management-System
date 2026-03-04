@@ -1,0 +1,70 @@
+/* --- Form Styling --- */
+#intakeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between rows */
+}
+
+/* Style all inputs, selects, and textareas */
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Input Focus Effects (Active State) */
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    border-color: #8d6e63; /* Khaki/Brown theme for Committee */
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2);
+}
+
+/* Label Styling */
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* Textarea specific */
+.input-group textarea {
+    resize: vertical; /* Allow user to stretch height only */
+    min-height: 80px;
+}
+
+/* The "Disabled" ID field */
+.input-group input:disabled {
+    background-color: #e0e0e0;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Button Styling specific to this form */
+#intakeForm .btn-primary {
+    background-color: #8d6e63; /* Match sidebar theme */
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#intakeForm .btn-primary:hover {
+    background-color: #6d4c41; /* Darker brown on hover */
+}
+
+/* Responsive adjustment for the split rows */
+@media (max-width: 768px) {
+    .dashboard-split {
+        grid-template-columns: 1fr; /* Stack inputs on mobile */
+    }
+}
