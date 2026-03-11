@@ -18,4 +18,6 @@
 body {
     background-color: var(--background-color);
     color: var(--text-dark);
+    height: 100vh; /* Force body to fit screen exactly */
+    overflow: hidden; /* Hide the main browser scrollbar */
 }

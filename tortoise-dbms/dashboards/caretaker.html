@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caretaker Operations - DBMS</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <style>
+        /* Simple inline styles for the checklist */
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary-green);
+        }
+        .task-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+        .task-row:hover { background-color: #f9f9f9; }
+        .task-row.done { 
+            text-decoration: line-through; 
+            color: #888;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar" style="background-color: #558b2f;">
+            <div class="logo">
+                <h2>🥕 CARETAKER</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">Daily Schedule</a></li>
+                <li><a href="#">Feeding Logs</a></li>
+                <li><a href="#">Habitat Sensors</a></li>
+            </ul>
+            <div class="logout-section">
+                <a href="../index.html" class="logout-btn">Log Out</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Daily Operations</h1>
+                <div class="user-info">
+                    <span>Staff <strong>Shawon</strong></span>
+                    <div class="user-avatar" style="background-color: #558b2f;">SS</div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card stat-card">
+                    <h3>Pending Tasks</h3>
+                    <p class="number" id="pendingCount">4</p>
+                    <span class="trend down">Due by 5:00 PM</span>
+                </div>
+                <div class="card stat-card warning">
+                    <h3>Food Inventory</h3>
+                    <p class="number">Low</p>
+                    <span class="trend neutral">Lettuce Stock < 10kg</span>
+                </div>
+            </section>
+
+            <section class="dashboard-split">
+                <div class="card" style="flex: 2;">
+                    <h3>Today's Schedule</h3>
+                    <div id="taskList">
+                        <div class="task-row">
+                            <input type="checkbox" class="task-checkbox">
+                            <div><strong>Morning Feeding (Sulcata Zone)</strong><br><small>High Fiber Mix • 15kg</small></div>
+                        </div>
+                        <div class="task-row">
+                            <input type="checkbox" class="task-checkbox">
+                            <div><strong>Clean Water Filters (Pond A)</strong><br><small>Scrub algae and check pH levels</small></div>
+                        </div>
+                        <div class="task-row">
+                            <input type="checkbox" class="task-checkbox">
+                            <div><strong>Habitat Inspection (Zone B)</strong><br><small>Check for fence damage</small></div>
+                        </div>
+                        <div class="task-row">
+                            <input type="checkbox" class="task-checkbox">
+                            <div><strong>Evening Feeding (Nursery)</strong><br><small>Soft pellets • 2kg</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="flex: 1;">
+                    <h3>Quick Report</h3>
+                    <button class="btn-primary" style="background:#d32f2f; width:100%; margin-bottom:10px;">🚨 Report Injury</button>
+                    <button class="btn-primary" style="background:#f57f17; width:100%;">⚠️ Maintenance Issue</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/caretaker.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breeding Program - DBMS</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar" style="background-color: #7b1fa2;">
+            <div class="logo">
+                <h2>🥚 BREEDING</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">Incubator Status</a></li>
+                <li><a href="#">Egg Registry</a></li>
+                <li><a href="#">Nursery Records</a></li>
+            </ul>
+            <div class="logout-section">
+                <a href="../index.html" class="logout-btn">Log Out</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Incubation & Nursery</h1>
+                <div class="user-info">
+                    <span>Officer <strong>Nadia</strong></span>
+                    <div class="user-avatar" style="background-color: #7b1fa2;">ON</div>
+                </div>
+            </header>
+
+            <section class="card" style="margin-bottom: 30px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3>🌡️ Live IOT Monitor (Incubator A)</h3>
+                    <span class="status-badge" style="background:#2e7d32;">System Normal</span>
+                </div>
+                <div class="chart-container" style="height: 250px; position: relative;">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </section>
+
+            <h3>Active Clutches</h3>
+            <section class="stats-grid">
+                <div class="card stat-card">
+                    <h4>Clutch #C-2026-01</h4>
+                    <p class="number">12 Eggs</p>
+                    <span class="trend neutral">Laid: Feb 15</span>
+                    <div style="margin-top:10px; font-size:0.9rem; color:#666;">Parent: #101 (Shelly)</div>
+                    <button class="btn-primary small" style="margin-top:10px; width:100%;">View Details</button>
+                </div>
+
+                <div class="card stat-card warning">
+                    <h4>Clutch #C-2026-02</h4>
+                    <p class="number">5 Eggs</p>
+                    <span class="trend down">High Humidity Alert</span>
+                    <div style="margin-top:10px; font-size:0.9rem; color:#666;">Parent: #108 (Big Red)</div>
+                    <button class="btn-primary small" style="margin-top:10px; width:100%;">Inspect</button>
+                </div>
+
+                <div class="card stat-card" style="border: 2px dashed #ccc; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="alert('Open New Clutch Form')">
+                    <h3 style="color:#777;">+ Register New Clutch</h3>
+                </div>
+            </section>
+
+            <section class="card table-container">
+                <h3>🐣 Recent Hatchlings (Nursery)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Hatch Date</th>
+                            <th>ID Assigned</th>
+                            <th>Weight (g)</th>
+                            <th>Condition</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>March 1, 2026</td>
+                            <td><strong>#H-55</strong></td>
+                            <td>45g</td>
+                            <td style="color:#2e7d32;">Strong</td>
+                            <td><button class="btn-secondary small">Log Growth</button></td>
+                        </tr>
+                        <tr>
+                            <td>Feb 28, 2026</td>
+                            <td><strong>#H-54</strong></td>
+                            <td>38g</td>
+                            <td style="color:#f57f17;">Monitor</td>
+                            <td><button class="btn-secondary small">Log Growth</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/breeding.js"></script>
+</body>
+</html>
