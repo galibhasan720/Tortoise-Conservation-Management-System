@@ -48,32 +48,39 @@ document.addEventListener('DOMContentLoaded', () => {
         showForm(loginForm);
     });
 
-    // Mock Login Submission logic (This is where your DBMS API call will go)
+    // Mock Login Submission logic
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault(); // Prevents the page from refreshing
         
-        const emailInput = document.getElementById('loginEmail').value;
-        
-        // In a real application, you would send this to your backend via fetch()
-        // Here we simulate the database returning a role based on the username entered.
+        // Convert to lowercase so "Vet" and "vet" both work
+        const emailInput = document.getElementById('loginEmail').value.toLowerCase(); 
         
         console.log(`Authenticating user: ${emailInput}`);
         
-        // Mock routing logic based on what the user typed in
+        // Mock routing logic based on user role
         if (emailInput.includes('vet')) {
             window.location.href = 'dashboards/vet.html';
-        } else if (emailInput.includes('super')) {
+        } 
+        else if (emailInput.includes('super') || emailInput.includes('admin')) {
             window.location.href = 'dashboards/supervisor.html';
-        } else if (emailInput.includes('breed')) {
+        } 
+        else if (emailInput.includes('breed')) {
             window.location.href = 'dashboards/breeding.html';
         } 
-        // Add this inside your login logic
-        else if (emailInput.includes('committee')) {
+        else if (emailInput.includes('committee') || emailInput.includes('collect')) {
             window.location.href = 'dashboards/committee.html';
         }
+        else if (emailInput.includes('care') || emailInput.includes('staff')) {
+            // Updated to point to your new caretaker dashboard
+            window.location.href = 'dashboards/caretaker.html'; 
+        }
+        
+        else if (emailInput.includes('env') || emailInput.includes('tech')) {
+            window.location.href = 'dashboards/environmental.html';
+        }
         else {
-            // Default redirect for staff/caretakers
-            window.location.href = 'dashboards/staff.html';
+            // If they type something random, show an error instead of breaking
+            alert('User role not found. Please use an email containing: vet, super, breed, committee, or care.');
         }
     });
 });

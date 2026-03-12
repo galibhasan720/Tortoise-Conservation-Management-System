@@ -7,7 +7,7 @@
     --white: #ffffff;
     --border-radius: 8px;
 }
-
+/* global.css */
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +16,15 @@
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-dark);
-    height: 100vh; /* Force body to fit screen exactly */
-    overflow: hidden; /* Hide the main browser scrollbar */
+    background-color: #f4f7f6; /* A soft, natural background color */
+    color: #333;
+}
+
+/* Ensure buttons look clickable */
+button {
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+button:active {
+    transform: scale(0.98);
 }
