@@ -1,0 +1,261 @@
+/* ========================================================
+   TCMS Custom Theme - Modern Lavender & Pink
+   ======================================================== */
+
+/* 1. Global Font & Body Background */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('tokens.css');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--style-bg);
+    color: var(--style-text);
+}
+
+/* Keep motion minimal for readability and faster perception */
+
+/* Override Bootstrap text-primary to match your dark purple */
+.text-primary {
+    color: var(--style-primary) !important;
+}
+
+/* 2. Modern Cards (Floating above the pink background) */
+.card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--style-card-shadow);
+    transition: box-shadow 0.2s ease;
+}
+
+/* 3. Navbar Styling with Modern Lavender Theme */
+.navbar {
+    background: linear-gradient(135deg, var(--style-primary) 0%, var(--style-primary-soft) 100%) !important;
+    box-shadow: var(--style-nav-shadow);
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.navbar-brand:hover {
+    opacity: 0.95;
+}
+
+.navbar .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    margin: 0 0.5rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--style-accent) !important;
+    opacity: 0.95;
+}
+
+/* 4. Primary Buttons (Using #6367FF and #8494FF) */
+.btn-primary {
+    background-color: var(--style-primary);
+    border-color: var(--style-primary);
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--style-primary-soft);
+    border-color: var(--style-primary-soft);
+    box-shadow: 0 2px 10px rgba(132, 148, 255, 0.28);
+}
+
+/* Outline Buttons (For "Back to Dashboard" etc.) */
+.btn-outline-secondary {
+    color: var(--style-primary);
+    border-color: var(--style-accent);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--style-accent);
+    color: #ffffff;
+    border-color: var(--style-accent);
+}
+
+/* 5. Table Styling */
+.table {
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+/* Table Header using the primary color */
+.table-dark,
+.table thead {
+    background-color: var(--style-primary) !important;
+    color: #ffffff;
+}
+
+.table-dark th,
+.table thead th {
+    background-color: var(--style-primary) !important;
+    border-color: var(--style-primary-soft);
+    font-weight: 600;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table Body Styling */
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Table Row Hover using your accent color (#C9BEFF) with low opacity */
+.table-hover tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(201, 190, 255, 0.3) !important;
+}
+
+/* 6. Form Inputs */
+.form-control, 
+.form-select {
+    border-radius: 8px;
+    border: 1px solid var(--style-accent);
+    padding: 0.6rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    border-color: var(--style-primary);
+    box-shadow: 0 0 0 0.25rem rgba(99, 103, 255, 0.25);
+    background-color: #fafbff;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--style-primary);
+    font-size: 0.95rem;
+}
+
+/* 7. Page Header Section */
+.page-header {
+    background: linear-gradient(135deg, var(--style-primary) 0%, var(--style-primary-soft) 100%);
+    color: white;
+    padding: 2.5rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(99, 103, 255, 0.15);
+    border-radius: 0 0 16px 16px;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    margin-bottom: 0;
+    opacity: 0.95;
+    font-size: 1rem;
+}
+
+/* 8. Status Badges */
+.status-badge,
+.badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-healthy,
+.badge-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-treatment,
+.badge-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-quarantine,
+.badge-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* 9. Action Buttons Container */
+.action-buttons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* 10. Container & Content Spacing */
+
+/* 12. Alert Styling */
+.alert {
+    border-radius: 12px;
+    border: none;
+}
+
+.alert-success {
+    background-color: rgba(201, 190, 255, 0.2);
+    color: var(--style-primary);
+    border-left: 4px solid var(--style-primary);
+}
+
+.alert-danger {
+    background-color: rgba(255, 200, 200, 0.2);
+    color: #d32f2f;
+    border-left: 4px solid #d32f2f;
+}
+
+.alert-warning {
+    background-color: rgba(255, 240, 200, 0.2);
+    color: #f57c00;
+    border-left: 4px solid #f57c00;
+}
+
+/* 13. Link Styling */
+a {
+    color: var(--style-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--style-primary-soft);
+}
+
+/* 14. AOS Animation Override for Consistency */
+[data-aos] {
+    transition-duration: 450ms !important;
+}
+
+[data-aos="fade-up"] {
+    transform: translate3d(0, 20px, 0);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}

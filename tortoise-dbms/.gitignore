@@ -1,0 +1,32 @@
+# Node
+node_modules/
+
+# Composer / PHP
+vendor/
+composer.lock
+
+# Environment
+.env
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Uploads/temp
+uploads/
+tmp/
+temp/
+*.log
+
+# Database dumps (optional)
+database/*.sql
+
+# XAMPP
+xampp/tmp/
+
+*.sqlite
+*.sqlite3

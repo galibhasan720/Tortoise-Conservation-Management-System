@@ -1,0 +1,11 @@
+TOPIC 1:  Tortoise Conservation Center Management System
+Maintain detailed records for each individual tortoise, including identification numbers, species classification, age, gender, health status, and history of care.
+Track information about different enclosures, such as size, habitat type, current occupants, maintenance schedules, and environmental parameters specific to each habitat.
+Manage breeding programs by recording mating pairs, nesting dates, egg counts, incubation periods, hatching success rates, and related observations.
+Schedule and log feeding times, monitor dietary requirements for different species or individuals, and track food inventory levels to ensure proper nutrition management.
+Document health assessments, medical treatments, vaccination records, and any incidents of illness or injury, facilitating ongoing health monitoring and care planning.
+Monitor environmental conditions such as temperature, humidity, water quality, etc. within enclosures and incubators, ensuring optimal conditions. Assign tasks to staff members, track completion status, and manage schedules for routine activities like feeding, cleaning, medical check-ups, and habitat maintenance.
+
+SUGGESTED STAKEHOLDERS:
+Tortoise Collecting Committee (suggested name), Tortoise Caretaker, Breeding Officer, Staff, Vet, Supervisor, Database
+

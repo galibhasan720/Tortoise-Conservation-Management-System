@@ -1,0 +1,66 @@
+1. The Finalized Entities & Attributes
+
+A. Core & Gateway Entities
+
+ROLES: role_id (PK), role_name.
+
+USERS: user_id (PK), role_id (FK), username, password_hash.
+
+SPECIES_DICT [NEW]: species_id (PK), species_name, conservation_status. (This prevents typos and normalizes your data).
+
+ENCLOSURE: enclosure_id (PK), capacity, habitat_type, location.
+
+TORTOISE_PROFILE [UPDATED]: tortoise_id (PK), enclosure_id (FK), species_id (FK) [UPDATED], gender, weight, date_of_entry, origin_location [NEW], status.
+
+B. Operational & Transactional Entities
+
+FEEDING_LOG: log_id (PK), tortoise_id (FK), user_id (FK), food_type, amount, timestamp.
+
+HEALTH_RECORD: record_id (PK), tortoise_id (FK), user_id (FK), diagnosis, treatment_plan, vaccination_date.
+
+BREEDING_RECORD: breeding_id (PK), male_tortoise_id (FK), female_tortoise_id (FK), user_id (FK), mating_date, egg_count, hatch_success.
+
+TASK_SCHEDULE: task_id (PK), user_id (FK), description, due_date, status.
+
+C. Environmental & Automated Entities
+
+IOT_TELEMETRY: telemetry_id (PK), enclosure_id (FK), temperature, humidity, timestamp.
+
+ALERTS [UPDATED]: alert_id (PK), enclosure_id (FK), trigger_reason, timestamp, status, resolved_by_user_id (FK) [NEW]. (Tracks exactly which Environmental Tech fixed the issue).
+
+2. The Complete Cardinality Mapping (For your ERD)
+When you draw your ER Diagram, use these exact relationships. I have added the missing 1-to-N relationships for the transactional tables.
+
+User & Access Relationships:
+
+ROLES (1) to USERS (N): One role (e.g., "Caretaker") belongs to many users.
+
+USERS (1) to FEEDING_LOG (N): One Caretaker can log many feedings.
+
+USERS (1) to HEALTH_RECORD (N): One Vet can write many health records.
+
+USERS (1) to BREEDING_RECORD (N): One Breeding Officer logs many breeding events.
+
+USERS (1) to TASK_SCHEDULE (N): One user can be assigned multiple tasks.
+
+USERS (1) to ALERTS (N): One Environmental Tech can resolve many alerts.
+
+Tortoise & Habitat Relationships:
+
+SPECIES_DICT (1) to TORTOISE_PROFILE (N): One species classification applies to many individual tortoises.
+
+ENCLOSURE (1) to TORTOISE_PROFILE (N): One enclosure holds many tortoises.
+
+ENCLOSURE (1) to IOT_TELEMETRY (N): One enclosure generates thousands of telemetry data points over time.
+
+ENCLOSURE (1) to ALERTS (N): One enclosure can trigger multiple environmental alerts.
+
+Tortoise Action Relationships:
+
+TORTOISE_PROFILE (1) to FEEDING_LOG (N): One tortoise has many meals recorded over its lifetime.
+
+TORTOISE_PROFILE (1) to HEALTH_RECORD (N): One tortoise has many vet visits.
+
+TORTOISE_PROFILE (1) to BREEDING_RECORD (N) [MALE]: One male tortoise can be part of many breeding records.
+
+TORTOISE_PROFILE (1) to BREEDING_RECORD (N) [FEMALE]: One female tortoise can be part of many breeding records.

@@ -1,0 +1,64 @@
+:root {
+    /* Core neutral tokens (used by theme.css) */
+    --bg: #f3f5fa;
+    --bg-soft: #edf2ff;
+    --surface: #ffffff;
+    --surface-soft: #f8fbff;
+    --line: #d5deef;
+
+    --ink: #142033;
+    --ink-soft: #43526d;
+    --ink-faint: #71819e;
+
+    --primary: #1564ff;
+    --primary-strong: #0d46ba;
+    --secondary: #009579;
+    --secondary-strong: #067663;
+    --accent: #e88a2a;
+    --danger: #c93232;
+    --success: #17834d;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+
+    --shadow-sm: 2px 2px 0 rgba(16, 33, 62, 0.12);
+    --shadow-md: 4px 4px 0 rgba(16, 33, 62, 0.16);
+    --shadow-lg: 6px 6px 0 rgba(16, 33, 62, 0.20);
+    --shadow-xl: 8px 8px 0 rgba(16, 33, 62, 0.24);
+
+    --trans: 0.25s ease;
+
+    /* Bootstrap-oriented lavender style tokens (used by style.css) */
+    --style-bg: #ffdbfd;
+    --style-text: #2b2d42;
+    --style-primary: #6367ff;
+    --style-primary-soft: #8494ff;
+    --style-accent: #c9beff;
+    --style-card-shadow: 0 8px 24px rgba(99, 103, 255, 0.12);
+    --style-nav-shadow: 0 4px 12px rgba(99, 103, 255, 0.15);
+
+    /* Compatibility aliases */
+    --text: var(--ink);
+    --text-muted: var(--ink-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f1419;
+        --bg-soft: #1a1f2e;
+        --surface: #1e2433;
+        --surface-soft: #252d3d;
+        --line: #3a4556;
+
+        --ink: #e8eef8;
+        --ink-soft: #b8c4d8;
+        --ink-faint: #8a96b0;
+
+        --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.40);
+        --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.50);
+        --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.60);
+        --shadow-xl: 8px 8px 0 rgba(0, 0, 0, 0.70);
+    }
+}
