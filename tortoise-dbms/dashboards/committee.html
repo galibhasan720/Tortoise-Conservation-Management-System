@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collecting Committee - DBMS</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/committee.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar" style="background-color: #8d6e63;">
+            <div class="logo">
+                <h2>🚙 FIELD OPS</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">New Rescue</a></li>
+                <li><a href="#">Transport Logs</a></li>
+                <li><a href="#">Map Locations</a></li>
+            </ul>
+            <div class="logout-section">
+                <a href="../index.html" class="logout-btn">Log Out</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Register New Tortoise</h1>
+                <div class="user-info">
+                    <span>Officer <strong>Tanjil</strong></span>
+                    <div class="user-avatar" style="background-color: #8d6e63;">OT</div>
+                </div>
+            </header>
+
+            <section class="card" style="max-width: 800px; margin: 0 auto;">
+                <h3>🐢 Intake Form</h3>
+                <form id="intakeForm">
+                    
+                    <div class="dashboard-split">
+                        <div class="input-group">
+                            <label>Assign ID (Auto-generated)</label>
+                            <input type="text" value="143" disabled style="background:#eee;">
+                        </div>
+                        <div class="input-group">
+                            <label>Temporary Name</label>
+                            <input type="text" placeholder="e.g. Rescued-05" required>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-split">
+                        <div class="input-group">
+                            <label>Species</label>
+                            <select required>
+                                <option>Sulcata</option>
+                                <option>Galapagos Giant</option>
+                                <option>Leopard Tortoise</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Approx. Age (Years)</label>
+                            <input type="number" placeholder="5">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Rescue Location / Origin</label>
+                        <input type="text" placeholder="GPS Coordinates or City Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Initial Health Condition</label>
+                        <textarea rows="3" placeholder="Describe any injuries, shell damage, or activity level..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%;">Confirm Registration</button>
+                </form>
+            </section>
+
+            <section class="card table-container" style="margin-top: 30px;">
+                <h3>Recent Intakes (Last 24h)</h3>
+                <ul class="task-list" id="recentLogList">
+                    <li class="task-item completed">
+                        <span>#142 - Found near River Bank</span>
+                        <span class="status">Transferred to Vet</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/committee.js"></script>
+</body>
+</html>
