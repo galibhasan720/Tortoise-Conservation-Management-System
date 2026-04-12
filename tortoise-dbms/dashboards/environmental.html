@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Control - DBMS</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar" style="background-color: #00838f;">
+            <div class="logo">
+                <h2>🌊 ENVIRONMENT</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">Habitat Sensors</a></li>
+                <li><a href="#">Maintenance Tickets</a></li>
+                <li><a href="#">Water Quality Logs</a></li>
+            </ul>
+            <div class="logout-section">
+                <a href="../index.html" class="logout-btn">Log Out</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Habitat & Infrastructure Control</h1>
+                <div class="user-info">
+                    <span>Tech <strong>Rahim</strong></span>
+                    <div class="user-avatar" style="background-color: #00838f;">TR</div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card stat-card">
+                    <h3>IOT Network Status</h3>
+                    <p class="number" style="color: #2e7d32;">100% Online</p>
+                    <span class="trend neutral">24 Active Sensors</span>
+                </div>
+                <div class="card stat-card warning">
+                    <h3>Pending Repairs</h3>
+                    <p class="number">2</p>
+                    <span class="trend down">Zone B UV Lamp Failed</span>
+                </div>
+            </section>
+
+            <section class="dashboard-split">
+                <div class="card" style="flex: 2;">
+                    <h3>Infrastructure Maintenance</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Location</th>
+                                <th>Issue Detected</th>
+                                <th>Priority</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Enclosure 3</td>
+                                <td>UV-B Bulb Expired (0 hours left)</td>
+                                <td style="color:#d32f2f; font-weight:bold;">High</td>
+                                <td><button class="btn-primary small" onclick="alert('Ticket marked as resolved. UV Bulb replaced.')">Mark Fixed</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pond Filter A</td>
+                                <td>Ammonia levels rising (Filter clog)</td>
+                                <td style="color:#f57f17; font-weight:bold;">Medium</td>
+                                <td><button class="btn-primary small" onclick="alert('Ticket marked as resolved. Filter cleaned.')">Mark Fixed</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" style="flex: 1; border-left: 4px solid #d32f2f;">
+                    <h3>Medical Alert System</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                        Use this to notify the Health Officer (Vet) if an environmental failure poses a health risk to the tortoises.
+                    </p>
+                    <button class="btn-primary" style="background:#d32f2f; width:100%; padding: 15px; font-size: 1.1rem;" onclick="alert('CRITICAL ALERT SENT TO VET: Environmental hazard reported in Enclosure 3. Please monitor animals for signs of illness.')">
+                        🚨 Alert Vet (Health Risk)
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
